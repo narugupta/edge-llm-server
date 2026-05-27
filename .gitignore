@@ -1,0 +1,4 @@
+build/
+tools/ui/node_modules/
+tools/ui/.ui-*.stamp
+*.gguf

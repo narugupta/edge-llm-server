@@ -374,6 +374,9 @@ GGML_BUILD_TESTS:BOOL=OFF
 //ggml: use ccache if available
 GGML_CCACHE:BOOL=ON
 
+//Path to a program.
+GGML_CCACHE_FOUND:FILEPATH=GGML_CCACHE_FOUND-NOTFOUND
+
 //ggml: enable CPU backend
 GGML_CPU:BOOL=ON
 
@@ -563,6 +566,9 @@ GGML_SANITIZE_THREAD:BOOL=OFF
 //ggml: enable undefined sanitizer
 GGML_SANITIZE_UNDEFINED:BOOL=OFF
 
+//Path to a program.
+GGML_SCCACHE_FOUND:FILEPATH=GGML_SCCACHE_FOUND-NOTFOUND
+
 //ggml: max input copies for pipeline parallelism
 GGML_SCHED_MAX_COPIES:STRING=4
 
@@ -727,6 +733,9 @@ LLAMA_TESTS_INSTALL:BOOL=ON
 //llama: install tools
 LLAMA_TOOLS_INSTALL:BOOL=ON
 
+//Hugging Face bucket name for prebuilt UI assets
+LLAMA_UI_HF_BUCKET:STRING=llama-ui
+
 //llama: use prebuilt UI from HF Bucket when available (requires
 // LLAMA_BUILD_UI=ON)
 LLAMA_USE_PREBUILT_UI:BOOL=ON
@@ -736,6 +745,10 @@ LLAMA_USE_SYSTEM_GGML:BOOL=OFF
 
 //llama: use 64-bit memory in WASM builds
 LLAMA_WASM_MEM64:BOOL=ON
+
+//Hugging Face bucket name for prebuilt webui assets (deprecated:
+// use LLAMA_UI_HF_BUCKET)
+LLAMA_WEBUI_HF_BUCKET:STRING=llama-ui
 
 //Command to build the project
 MAKECOMMAND:STRING=/usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
@@ -757,6 +770,24 @@ OPENSSL_NO_ASM:BOOL=ON
 
 //Path to a library.
 OPENSSL_SSL_LIBRARY:FILEPATH=OPENSSL_SSL_LIBRARY-NOTFOUND
+
+//CXX compiler flags for OpenMP parallelization
+OpenMP_CXX_FLAGS:STRING=-fopenmp
+
+//CXX compiler libraries for OpenMP parallelization
+OpenMP_CXX_LIB_NAMES:STRING=gomp;pthread
+
+//C compiler flags for OpenMP parallelization
+OpenMP_C_FLAGS:STRING=-fopenmp
+
+//C compiler libraries for OpenMP parallelization
+OpenMP_C_LIB_NAMES:STRING=gomp;pthread
+
+//Path to the gomp library for OpenMP
+OpenMP_gomp_LIBRARY:FILEPATH=/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so
+
+//Path to the pthread library for OpenMP
+OpenMP_pthread_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.a
 
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
@@ -946,7 +977,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1003,10 +1034,19 @@ CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 //Details about finding Git
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v2.43.0()]
+//Details about finding OpenMP
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][TRUE][c ][v4.5()]
+//Details about finding OpenMP_C
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_C:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][v4.5()]
+//Details about finding OpenMP_CXX
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_CXX:INTERNAL=[-fopenmp][/usr/lib/gcc/x86_64-linux-gnu/13/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.a][v4.5()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
+//List of backends for cmake package
+GGML_AVAILABLE_BACKENDS:INTERNAL=ggml-cpu
 //STRINGS property for variable: GGML_CUDA_COMPRESSION_MODE
 GGML_CUDA_COMPRESSION_MODE-STRINGS:INTERNAL=none;speed;balance;size
+GGML_OPENMP_ENABLED:INTERNAL=ON
 //ADVANCED property for variable: GITCOMMAND
 GITCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GIT_EXECUTABLE
@@ -1023,6 +1063,30 @@ OPENSSL_CRYPTO_LIBRARY-ADVANCED:INTERNAL=1
 OPENSSL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENSSL_SSL_LIBRARY
 OPENSSL_SSL_LIBRARY-ADVANCED:INTERNAL=1
+//Result of TRY_COMPILE
+OpenMP_COMPILE_RESULT_CXX_fopenmp:INTERNAL=TRUE
+//Result of TRY_COMPILE
+OpenMP_COMPILE_RESULT_C_fopenmp:INTERNAL=TRUE
+//ADVANCED property for variable: OpenMP_CXX_FLAGS
+OpenMP_CXX_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_CXX_LIB_NAMES
+OpenMP_CXX_LIB_NAMES-ADVANCED:INTERNAL=1
+//CXX compiler's OpenMP specification date
+OpenMP_CXX_SPEC_DATE:INTERNAL=201511
+//ADVANCED property for variable: OpenMP_C_FLAGS
+OpenMP_C_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_C_LIB_NAMES
+OpenMP_C_LIB_NAMES-ADVANCED:INTERNAL=1
+//C compiler's OpenMP specification date
+OpenMP_C_SPEC_DATE:INTERNAL=201511
+//Result of TRY_COMPILE
+OpenMP_SPECTEST_CXX_:INTERNAL=TRUE
+//Result of TRY_COMPILE
+OpenMP_SPECTEST_C_:INTERNAL=TRUE
+//ADVANCED property for variable: OpenMP_gomp_LIBRARY
+OpenMP_gomp_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_pthread_LIBRARY
+OpenMP_pthread_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_ARGN
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE

@@ -220,8 +220,6 @@ if (LLAMA_BUILD_COMMON AND LLAMA_BUILD_TESTS AND NOT CMAKE_JS_VERSION)
 endif()
 
 if (LLAMA_BUILD_COMMON AND LLAMA_BUILD_EXAMPLES)
-    add_subdirectory(examples)
-    add_subdirectory(pocs)
 endif()
 
 if (LLAMA_BUILD_COMMON AND LLAMA_BUILD_TOOLS)
@@ -229,7 +227,6 @@ if (LLAMA_BUILD_COMMON AND LLAMA_BUILD_TOOLS)
 endif()
 
 if (LLAMA_BUILD_APP)
-    add_subdirectory(app)
 endif()
 
 # Automatically add all files from the 'licenses' directory
