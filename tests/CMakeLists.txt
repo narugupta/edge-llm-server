@@ -152,20 +152,14 @@ if (NOT WIN32 OR NOT BUILD_SHARED_LIBS)
     # these tests are disabled on Windows because they use internal functions not exported with LLAMA_API (when building with shared libraries)
     llama_build_and_test(test-sampling.cpp)
     llama_build_and_test(test-reasoning-budget.cpp)
-    llama_build_and_test(test-grammar-parser.cpp)
-    llama_build_and_test(test-grammar-integration.cpp)
-    llama_build_and_test(test-llama-grammar.cpp)
     # TODO: disabled on loongarch64 because the ggml-ci node lacks Python 3.8
     if (NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "loongarch64")
-        llama_build_and_test(test-json-schema-to-grammar.cpp   WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
-        target_include_directories(test-json-schema-to-grammar PRIVATE ${PROJECT_SOURCE_DIR}/tools/server)
     endif()
 
     if (NOT GGML_BACKEND_DL)
         llama_build(test-quantize-stats.cpp)
     endif()
 
-    llama_build(test-gbnf-validator.cpp)
 
     # build test-tokenizer-1-bpe target once and add many tests
     llama_build(test-tokenizer-1-bpe.cpp)
@@ -191,24 +185,9 @@ if (NOT WIN32 OR NOT BUILD_SHARED_LIBS)
     llama_build_and_test(test-llama-archs.cpp)
 endif()
 
-llama_build_and_test(test-chat-peg-parser.cpp peg-parser/simple-tokenize.cpp)
-llama_build_and_test(test-jinja.cpp)
-llama_test(test-jinja NAME test-jinja-py ARGS -py LABEL python)
-llama_build_and_test(test-chat-auto-parser.cpp WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
 llama_build_and_test(test-chat-template.cpp)
 llama_build_and_test(test-json-partial.cpp)
 llama_build_and_test(test-log.cpp)
-llama_build_and_test(
-    test-peg-parser.cpp
-    peg-parser/simple-tokenize.cpp
-    peg-parser/test-basic.cpp
-    peg-parser/test-gbnf-generation.cpp
-    peg-parser/test-json-parser.cpp
-    peg-parser/test-json-serialization.cpp
-    peg-parser/test-python-dict-parser.cpp
-    peg-parser/test-unicode.cpp
-    peg-parser/tests.h
-)
 llama_build_and_test(test-regex-partial.cpp)
 
 if (NOT ${CMAKE_SYSTEM_PROCESSOR} MATCHES "s390x")

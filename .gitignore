@@ -1,4 +1,34 @@
+# Build output
 build/
-tools/ui/node_modules/
-tools/ui/.ui-*.stamp
+
+# Model files - large binary files, never commit
 *.gguf
+*.bin
+*.safetensors
+
+# UI build artifacts
+tools/ui/node_modules/
+tools/ui/.svelte-kit/
+tools/ui/.ui-*.stamp
+tools/ui/dist/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test outputs
+results/
+*.log
