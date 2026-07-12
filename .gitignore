@@ -30,5 +30,5 @@ venv/
 Thumbs.db
 
 # Test outputs
-results/
 *.log
+deleted_files/
