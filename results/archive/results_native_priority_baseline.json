@@ -1,0 +1,642 @@
+{
+  "meta": {
+    "host": "localhost",
+    "port": 8081,
+    "server_port": 8081,
+    "rounds": 15,
+    "label": "native_priority_baseline",
+    "via_proxy": false,
+    "timestamp": "2026-06-25T05:39:58.854282"
+  },
+  "raw": [
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 0,
+      "t_start": 3481.192803331,
+      "ttft": 1.2029655179999281,
+      "total_time": 1.5790618390001327,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": false
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 0,
+      "t_start": 3481.194308025,
+      "ttft": 1.959956216000137,
+      "total_time": 6.993824950000089,
+      "tokens_out": 99,
+      "error": null,
+      "warm_cache": false
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 0,
+      "t_start": 3481.196083652,
+      "ttft": 1.2005269329997645,
+      "total_time": 25.013123446999998,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": false
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 1,
+      "t_start": 3508.217034186,
+      "ttft": 0.6741056759997264,
+      "total_time": 1.1036298109997915,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 1,
+      "t_start": 3508.218703883,
+      "ttft": 1.5238986679996742,
+      "total_time": 6.4683876329995655,
+      "tokens_out": 99,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 1,
+      "t_start": 3508.213182103,
+      "ttft": 0.679962008000075,
+      "total_time": 24.070080875000258,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 2,
+      "t_start": 3534.288605374,
+      "ttft": 5.009746619999987,
+      "total_time": 5.359500802000184,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 2,
+      "t_start": 3534.290346046,
+      "ttft": 0.21572806499989383,
+      "total_time": 4.8223572829997465,
+      "tokens_out": 88,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 2,
+      "t_start": 3534.286685954,
+      "ttft": 0.21981661000017994,
+      "total_time": 23.34148396599994,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 3,
+      "t_start": 3559.633429095,
+      "ttft": 7.232867457000339,
+      "total_time": 7.688906610000231,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 3,
+      "t_start": 3559.634778934,
+      "ttft": 0.2672123749998718,
+      "total_time": 7.142173323999941,
+      "tokens_out": 118,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 3,
+      "t_start": 3559.631657086,
+      "ttft": 0.270761782000136,
+      "total_time": 26.769599193999966,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 4,
+      "t_start": 3588.405678548,
+      "ttft": 0.21139018699977896,
+      "total_time": 0.7272236819999307,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 4,
+      "t_start": 3588.40905852,
+      "ttft": 0.20839347399987673,
+      "total_time": 7.384113743999933,
+      "tokens_out": 106,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 4,
+      "t_start": 3588.405123528,
+      "ttft": 1.762363293999897,
+      "total_time": 28.911414980000245,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 5,
+      "t_start": 3619.318805674,
+      "ttft": 7.329706480999903,
+      "total_time": 7.763541932999942,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 5,
+      "t_start": 3619.321815404,
+      "ttft": 1.5394325329998537,
+      "total_time": 7.024504286000138,
+      "tokens_out": 97,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 5,
+      "t_start": 3619.320326825,
+      "ttft": 1.5401739550002276,
+      "total_time": 29.946809478999967,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 6,
+      "t_start": 3651.270486302,
+      "ttft": 0.6418778900001598,
+      "total_time": 1.0507234130000143,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 6,
+      "t_start": 3651.269400942,
+      "ttft": 0.639477598999747,
+      "total_time": 7.615423229000044,
+      "tokens_out": 97,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 6,
+      "t_start": 3651.269174057,
+      "ttft": 2.02986150300012,
+      "total_time": 31.465452803000062,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 7,
+      "t_start": 3684.737091124,
+      "ttft": 0.4032371680000324,
+      "total_time": 0.8605571719999716,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 7,
+      "t_start": 3684.738687994,
+      "ttft": 0.4020880009998109,
+      "total_time": 10.72788699800003,
+      "tokens_out": 125,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 7,
+      "t_start": 3684.739581223,
+      "ttft": 2.2035254459997304,
+      "total_time": 32.711059566999666,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 8,
+      "t_start": 3719.453711518,
+      "ttft": 1.7259312139999565,
+      "total_time": 2.1154096989998834,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 8,
+      "t_start": 3719.454471841,
+      "ttft": 2.5391795069999716,
+      "total_time": 9.476746651999747,
+      "tokens_out": 95,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 8,
+      "t_start": 3719.45279555,
+      "ttft": 1.7297948940004062,
+      "total_time": 32.57595964500024,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 9,
+      "t_start": 3754.031150766,
+      "ttft": 0.3886424550000811,
+      "total_time": 0.8143033470000773,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 9,
+      "t_start": 3754.032736927,
+      "ttft": 0.38768028499998763,
+      "total_time": 11.39919763900025,
+      "tokens_out": 142,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 9,
+      "t_start": 3754.033605048,
+      "ttft": 2.0528621829998883,
+      "total_time": 32.20892603099992,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 10,
+      "t_start": 3788.245555524,
+      "ttft": 0.6456944880001174,
+      "total_time": 1.0594663520000722,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 10,
+      "t_start": 3788.247056859,
+      "ttft": 1.4785091599997031,
+      "total_time": 7.426249215999633,
+      "tokens_out": 99,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 10,
+      "t_start": 3788.248817271,
+      "ttft": 0.6419473959999777,
+      "total_time": 29.515443335999862,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 11,
+      "t_start": 3819.766688353,
+      "ttft": 0.34497679000014614,
+      "total_time": 0.7300731380000798,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 11,
+      "t_start": 3819.768020112,
+      "ttft": 0.3443436559996371,
+      "total_time": 8.128406712000015,
+      "tokens_out": 112,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 11,
+      "t_start": 3819.766377262,
+      "ttft": 1.8277705360001164,
+      "total_time": 28.39230475400018,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 12,
+      "t_start": 3850.162902706,
+      "ttft": 7.5500224840002375,
+      "total_time": 8.017891005000365,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 12,
+      "t_start": 3850.167151754,
+      "ttft": 1.4315147840002282,
+      "total_time": 7.269057675000113,
+      "tokens_out": 103,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 12,
+      "t_start": 3850.165835313,
+      "ttft": 1.4322601389999363,
+      "total_time": 28.045715045999714,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 13,
+      "t_start": 3880.216986312,
+      "ttft": 7.923534213000039,
+      "total_time": 8.437789676000193,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 13,
+      "t_start": 3880.215233806,
+      "ttft": 1.1988183439998465,
+      "total_time": 7.625865470999997,
+      "tokens_out": 112,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 13,
+      "t_start": 3880.218364751,
+      "ttft": 1.1962806910000836,
+      "total_time": 27.670662057999834,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 14,
+      "t_start": 3909.890985176,
+      "ttft": 0.22535925200008933,
+      "total_time": 0.5838439260000996,
+      "tokens_out": 7,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 14,
+      "t_start": 3909.892270442,
+      "ttft": 0.22450387499975477,
+      "total_time": 9.655329721999806,
+      "tokens_out": 143,
+      "error": null,
+      "warm_cache": true
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 14,
+      "t_start": 3909.893451185,
+      "ttft": 1.5841304080004193,
+      "total_time": 27.852681855000355,
+      "tokens_out": 512,
+      "error": null,
+      "warm_cache": true
+    }
+  ],
+  "summary": {
+    "chat": {
+      "ttft": {
+        "n": 15,
+        "mean": 2.767,
+        "median": 0.674,
+        "min": 0.211,
+        "max": 7.924,
+        "stdev": 3.188,
+        "p99": 7.55
+      },
+      "total": {
+        "n": 15,
+        "mean": 3.193,
+        "median": 1.104,
+        "min": 0.584,
+        "max": 8.438,
+        "stdev": 3.206,
+        "p99": 8.018
+      },
+      "ttft_steady": {
+        "n": 14,
+        "mean": 2.879,
+        "median": 0.66,
+        "min": 0.211,
+        "max": 7.924,
+        "stdev": 3.278,
+        "p99": 7.55
+      },
+      "total_steady": {
+        "n": 14,
+        "mean": 3.308,
+        "median": 1.082,
+        "min": 0.584,
+        "max": 8.438,
+        "stdev": 3.295,
+        "p99": 8.018
+      },
+      "errors": [],
+      "n_warm": 14,
+      "n_cold": 1
+    },
+    "moderate": {
+      "ttft": {
+        "n": 15,
+        "mean": 0.957,
+        "median": 0.639,
+        "min": 0.208,
+        "max": 2.539,
+        "stdev": 0.754,
+        "p99": 1.96
+      },
+      "total": {
+        "n": 15,
+        "mean": 7.944,
+        "median": 7.426,
+        "min": 4.822,
+        "max": 11.399,
+        "stdev": 1.702,
+        "p99": 10.728
+      },
+      "ttft_steady": {
+        "n": 14,
+        "mean": 0.886,
+        "median": 0.521,
+        "min": 0.208,
+        "max": 2.539,
+        "stdev": 0.727,
+        "p99": 1.539
+      },
+      "total_steady": {
+        "n": 14,
+        "mean": 8.012,
+        "median": 7.521,
+        "min": 4.822,
+        "max": 11.399,
+        "stdev": 1.745,
+        "p99": 10.728
+      },
+      "errors": [],
+      "n_warm": 14,
+      "n_cold": 1
+    },
+    "batch": {
+      "ttft": {
+        "n": 15,
+        "mean": 1.358,
+        "median": 1.54,
+        "min": 0.22,
+        "max": 2.204,
+        "stdev": 0.642,
+        "p99": 2.053
+      },
+      "total": {
+        "n": 15,
+        "mean": 28.566,
+        "median": 28.392,
+        "min": 23.341,
+        "max": 32.711,
+        "stdev": 2.962,
+        "p99": 32.576
+      },
+      "ttft_steady": {
+        "n": 14,
+        "mean": 1.369,
+        "median": 1.562,
+        "min": 0.22,
+        "max": 2.204,
+        "stdev": 0.664,
+        "p99": 2.053
+      },
+      "total_steady": {
+        "n": 14,
+        "mean": 28.82,
+        "median": 28.652,
+        "min": 23.341,
+        "max": 32.711,
+        "stdev": 2.9,
+        "p99": 32.576
+      },
+      "errors": [],
+      "n_warm": 14,
+      "n_cold": 1
+    }
+  },
+  "slo_violations": {
+    "chat": [
+      "TTFT steady-state mean 2.879s > 0.5s",
+      "TTFT steady-state p99 7.550s > 2.0s"
+    ],
+    "moderate": [],
+    "batch": []
+  },
+  "proxy_timings": []
+}

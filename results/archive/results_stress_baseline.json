@@ -1,0 +1,1061 @@
+{
+  "meta": {
+    "host": "localhost",
+    "port": 8081,
+    "server_port": 8081,
+    "waves": 8,
+    "clients": 6,
+    "client_mix": [
+      "chat",
+      "chat",
+      "moderate",
+      "moderate",
+      "batch",
+      "batch"
+    ],
+    "wave_delay": 1.0,
+    "label": "stress_baseline",
+    "via_proxy": false,
+    "timestamp": "2026-06-22T17:20:26.680397"
+  },
+  "raw": [
+    {
+      "wave": 0,
+      "client_id": "moderate-1",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10303.031096794,
+      "ttft": 1.0638398159990174,
+      "total_time": 4.782296047998898,
+      "tokens_out": 89,
+      "tokens_per_s": 23.93,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10303.033195124,
+      "ttft": 1.0637580799993884,
+      "total_time": 4.7806477659996744,
+      "tokens_out": 89,
+      "tokens_per_s": 23.94,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-1",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10303.031314487,
+      "ttft": 5.2342935249998845,
+      "total_time": 5.525915326999893,
+      "tokens_out": 7,
+      "tokens_per_s": 24.0,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10303.030511816,
+      "ttft": 5.235477895001168,
+      "total_time": 5.5273426760013535,
+      "tokens_out": 7,
+      "tokens_per_s": 23.98,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "batch-1",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10303.032379733,
+      "ttft": 7.274844597999618,
+      "total_time": 51.54619751300015,
+      "tokens_out": 512,
+      "tokens_per_s": 11.57,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10303.029749263,
+      "ttft": 7.2779061410001304,
+      "total_time": 51.55018128300071,
+      "tokens_out": 512,
+      "tokens_per_s": 11.56,
+      "error": null
+    },
+    {
+      "wave": 1,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10355.588169118,
+      "ttft": 0.2393341959996178,
+      "total_time": 0.5903439710000384,
+      "tokens_out": 7,
+      "tokens_per_s": 19.94,
+      "error": null
+    },
+    {
+      "wave": 1,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10355.593268364,
+      "ttft": 0.23729965900020034,
+      "total_time": 8.480749715999991,
+      "tokens_out": 90,
+      "tokens_per_s": 10.92,
+      "error": null
+    },
+    {
+      "wave": 1,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10355.593015441,
+      "ttft": 2.375853277000715,
+      "total_time": 42.89258388300004,
+      "tokens_out": 512,
+      "tokens_per_s": 12.64,
+      "error": null
+    },
+    {
+      "wave": 1,
+      "client_id": "chat-1",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10355.598655807,
+      "ttft": 43.25212131999979,
+      "total_time": 43.80529589800062,
+      "tokens_out": 7,
+      "tokens_per_s": 12.65,
+      "error": null
+    },
+    {
+      "wave": 1,
+      "client_id": "batch-1",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10355.595100429,
+      "ttft": 10.470188757999495,
+      "total_time": 49.90877881199958,
+      "tokens_out": 512,
+      "tokens_per_s": 12.98,
+      "error": null
+    },
+    {
+      "wave": 1,
+      "client_id": "moderate-1",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10355.594697736,
+      "ttft": 44.520500687000094,
+      "total_time": 51.060500364999825,
+      "tokens_out": 100,
+      "tokens_per_s": 15.29,
+      "error": null
+    },
+    {
+      "wave": 2,
+      "client_id": "moderate-1",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10407.664795268,
+      "ttft": 1.546485371000017,
+      "total_time": 9.34348899700126,
+      "tokens_out": 113,
+      "tokens_per_s": 14.49,
+      "error": null
+    },
+    {
+      "wave": 2,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10407.659848966,
+      "ttft": 1.5527861710015713,
+      "total_time": 39.47517636500015,
+      "tokens_out": 512,
+      "tokens_per_s": 13.5,
+      "error": null
+    },
+    {
+      "wave": 2,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10407.666812968,
+      "ttft": 39.795118382999135,
+      "total_time": 40.40273122399958,
+      "tokens_out": 7,
+      "tokens_per_s": 11.52,
+      "error": null
+    },
+    {
+      "wave": 2,
+      "client_id": "chat-1",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10407.668698914,
+      "ttft": 40.56542763899961,
+      "total_time": 41.25160724200032,
+      "tokens_out": 7,
+      "tokens_per_s": 10.2,
+      "error": null
+    },
+    {
+      "wave": 2,
+      "client_id": "batch-1",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10407.670222965,
+      "ttft": 11.002902963000452,
+      "total_time": 49.17838454000048,
+      "tokens_out": 512,
+      "tokens_per_s": 13.41,
+      "error": null
+    },
+    {
+      "wave": 2,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10407.666500022,
+      "ttft": 41.91308059000039,
+      "total_time": 49.754921542000375,
+      "tokens_out": 109,
+      "tokens_per_s": 13.9,
+      "error": null
+    },
+    {
+      "wave": 3,
+      "client_id": "chat-1",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10458.425431531,
+      "ttft": 0.4067661879998923,
+      "total_time": 0.8292007979998743,
+      "tokens_out": 7,
+      "tokens_per_s": 16.57,
+      "error": null
+    },
+    {
+      "wave": 3,
+      "client_id": "moderate-1",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10458.426033092,
+      "ttft": 1.4456006909986172,
+      "total_time": 7.949050454999451,
+      "tokens_out": 99,
+      "tokens_per_s": 15.22,
+      "error": null
+    },
+    {
+      "wave": 3,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10458.424819457,
+      "ttft": 0.40667196800131933,
+      "total_time": 42.6453920010008,
+      "tokens_out": 512,
+      "tokens_per_s": 12.12,
+      "error": null
+    },
+    {
+      "wave": 3,
+      "client_id": "batch-1",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10458.42659038,
+      "ttft": 9.579047225999602,
+      "total_time": 51.0190954589998,
+      "tokens_out": 512,
+      "tokens_per_s": 12.36,
+      "error": null
+    },
+    {
+      "wave": 3,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10458.424143026,
+      "ttft": 51.35158163300002,
+      "total_time": 51.86679660499976,
+      "tokens_out": 7,
+      "tokens_per_s": 13.59,
+      "error": null
+    },
+    {
+      "wave": 3,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10458.427529716,
+      "ttft": 42.782093472998895,
+      "total_time": 52.008966478999355,
+      "tokens_out": 118,
+      "tokens_per_s": 12.79,
+      "error": null
+    },
+    {
+      "wave": 4,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10511.448831617,
+      "ttft": 0.10295902599864348,
+      "total_time": 2.2672218199986673,
+      "tokens_out": 7,
+      "tokens_per_s": 3.23,
+      "error": null
+    },
+    {
+      "wave": 4,
+      "client_id": "chat-1",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10511.456673251,
+      "ttft": 2.3301995279998664,
+      "total_time": 2.8870993070013355,
+      "tokens_out": 7,
+      "tokens_per_s": 12.57,
+      "error": null
+    },
+    {
+      "wave": 4,
+      "client_id": "moderate-1",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10511.452530491,
+      "ttft": 4.065252176998911,
+      "total_time": 13.045727819000604,
+      "tokens_out": 101,
+      "tokens_per_s": 11.25,
+      "error": null
+    },
+    {
+      "wave": 4,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10511.451692516,
+      "ttft": 13.131221005998668,
+      "total_time": 20.269115361999866,
+      "tokens_out": 101,
+      "tokens_per_s": 14.15,
+      "error": null
+    },
+    {
+      "wave": 4,
+      "client_id": "batch-1",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10511.443529889,
+      "ttft": 1.8639910250003595,
+      "total_time": 46.073050517999945,
+      "tokens_out": 512,
+      "tokens_per_s": 11.58,
+      "error": null
+    },
+    {
+      "wave": 4,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10511.459599471,
+      "ttft": 22.078537788000176,
+      "total_time": 58.492991340001026,
+      "tokens_out": 512,
+      "tokens_per_s": 14.06,
+      "error": null
+    },
+    {
+      "wave": 5,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10570.962811222,
+      "ttft": 0.4299067339998146,
+      "total_time": 0.8471983270010242,
+      "tokens_out": 7,
+      "tokens_per_s": 16.77,
+      "error": null
+    },
+    {
+      "wave": 5,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10570.964449381,
+      "ttft": 1.5180764430006093,
+      "total_time": 8.4948357580015,
+      "tokens_out": 99,
+      "tokens_per_s": 14.19,
+      "error": null
+    },
+    {
+      "wave": 5,
+      "client_id": "chat-1",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10570.964747489,
+      "ttft": 8.801231146999271,
+      "total_time": 9.310983467999904,
+      "tokens_out": 7,
+      "tokens_per_s": 13.73,
+      "error": null
+    },
+    {
+      "wave": 5,
+      "client_id": "moderate-1",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10570.964138918,
+      "ttft": 9.96273050200034,
+      "total_time": 17.114266919999864,
+      "tokens_out": 99,
+      "tokens_per_s": 13.84,
+      "error": null
+    },
+    {
+      "wave": 5,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10570.957836068,
+      "ttft": 0.43437395399996603,
+      "total_time": 44.27165090699964,
+      "tokens_out": 512,
+      "tokens_per_s": 11.68,
+      "error": null
+    },
+    {
+      "wave": 5,
+      "client_id": "batch-1",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10570.965556773,
+      "ttft": 18.9560630699998,
+      "total_time": 56.31059119999918,
+      "tokens_out": 512,
+      "tokens_per_s": 13.71,
+      "error": null
+    },
+    {
+      "wave": 6,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10628.287205118,
+      "ttft": 1.4958207449999463,
+      "total_time": 8.829538521000359,
+      "tokens_out": 99,
+      "tokens_per_s": 13.5,
+      "error": null
+    },
+    {
+      "wave": 6,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10628.281260346,
+      "ttft": 9.160975217999294,
+      "total_time": 9.64744390099986,
+      "tokens_out": 7,
+      "tokens_per_s": 14.39,
+      "error": null
+    },
+    {
+      "wave": 6,
+      "client_id": "chat-1",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10628.289686524,
+      "ttft": 9.722483542000191,
+      "total_time": 10.23876664800082,
+      "tokens_out": 7,
+      "tokens_per_s": 13.56,
+      "error": null
+    },
+    {
+      "wave": 6,
+      "client_id": "moderate-1",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10628.292103616,
+      "ttft": 10.896861573999558,
+      "total_time": 19.154499459000363,
+      "tokens_out": 113,
+      "tokens_per_s": 13.68,
+      "error": null
+    },
+    {
+      "wave": 6,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10628.28539747,
+      "ttft": 1.4984643810003035,
+      "total_time": 43.58863266900153,
+      "tokens_out": 512,
+      "tokens_per_s": 12.16,
+      "error": null
+    },
+    {
+      "wave": 6,
+      "client_id": "batch-1",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10628.290394264,
+      "ttft": 20.91996310399918,
+      "total_time": 55.6449002520003,
+      "tokens_out": 512,
+      "tokens_per_s": 14.74,
+      "error": null
+    },
+    {
+      "wave": 7,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10684.948913696,
+      "ttft": 1.5767104509995988,
+      "total_time": 7.818937086000005,
+      "tokens_out": 92,
+      "tokens_per_s": 14.74,
+      "error": null
+    },
+    {
+      "wave": 7,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10684.952107929,
+      "ttft": 1.5745055639999919,
+      "total_time": 44.536366278998685,
+      "tokens_out": 512,
+      "tokens_per_s": 11.92,
+      "error": null
+    },
+    {
+      "wave": 7,
+      "client_id": "chat-1",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10684.95046598,
+      "ttft": 44.93236855000032,
+      "total_time": 45.439747639000416,
+      "tokens_out": 7,
+      "tokens_per_s": 13.8,
+      "error": null
+    },
+    {
+      "wave": 7,
+      "client_id": "batch-1",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 10684.940798104,
+      "ttft": 9.590625003998866,
+      "total_time": 52.97150021199923,
+      "tokens_out": 512,
+      "tokens_per_s": 11.8,
+      "error": null
+    },
+    {
+      "wave": 7,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 10684.946093983,
+      "ttft": 53.30851690799864,
+      "total_time": 53.75764942800015,
+      "tokens_out": 7,
+      "tokens_per_s": 15.59,
+      "error": null
+    },
+    {
+      "wave": 7,
+      "client_id": "moderate-1",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 10684.947443288,
+      "ttft": 46.15791655400062,
+      "total_time": 59.24227962000077,
+      "tokens_out": 184,
+      "tokens_per_s": 14.06,
+      "error": null
+    }
+  ],
+  "priority_ordering": {
+    "total_pairs": 96,
+    "total_violations": 48,
+    "violation_rate": 0.5,
+    "per_wave": {
+      "0": 4,
+      "1": 6,
+      "2": 8,
+      "3": 8,
+      "4": 3,
+      "5": 4,
+      "6": 5,
+      "7": 10
+    },
+    "violations": [
+      {
+        "wave": 0,
+        "high_client": "chat-1",
+        "high_ttft": 5.2342935249998845,
+        "low_client": "moderate-1",
+        "low_ttft": 1.0638398159990174,
+        "delta_s": 4.1705,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 0,
+        "high_client": "chat-1",
+        "high_ttft": 5.2342935249998845,
+        "low_client": "moderate-0",
+        "low_ttft": 1.0637580799993884,
+        "delta_s": 4.1705,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 0,
+        "high_client": "chat-0",
+        "high_ttft": 5.235477895001168,
+        "low_client": "moderate-1",
+        "low_ttft": 1.0638398159990174,
+        "delta_s": 4.1716,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 0,
+        "high_client": "chat-0",
+        "high_ttft": 5.235477895001168,
+        "low_client": "moderate-0",
+        "low_ttft": 1.0637580799993884,
+        "delta_s": 4.1717,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 1,
+        "high_client": "chat-0",
+        "high_ttft": 0.2393341959996178,
+        "low_client": "moderate-0",
+        "low_ttft": 0.23729965900020034,
+        "delta_s": 0.002,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 1,
+        "high_client": "chat-1",
+        "high_ttft": 43.25212131999979,
+        "low_client": "moderate-0",
+        "low_ttft": 0.23729965900020034,
+        "delta_s": 43.0148,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 1,
+        "high_client": "chat-1",
+        "high_ttft": 43.25212131999979,
+        "low_client": "batch-0",
+        "low_ttft": 2.375853277000715,
+        "delta_s": 40.8763,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 1,
+        "high_client": "chat-1",
+        "high_ttft": 43.25212131999979,
+        "low_client": "batch-1",
+        "low_ttft": 10.470188757999495,
+        "delta_s": 32.7819,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 1,
+        "high_client": "moderate-1",
+        "high_ttft": 44.520500687000094,
+        "low_client": "batch-0",
+        "low_ttft": 2.375853277000715,
+        "delta_s": 42.1446,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 1,
+        "high_client": "moderate-1",
+        "high_ttft": 44.520500687000094,
+        "low_client": "batch-1",
+        "low_ttft": 10.470188757999495,
+        "delta_s": 34.0503,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 2,
+        "high_client": "chat-0",
+        "high_ttft": 39.795118382999135,
+        "low_client": "moderate-1",
+        "low_ttft": 1.546485371000017,
+        "delta_s": 38.2486,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 2,
+        "high_client": "chat-1",
+        "high_ttft": 40.56542763899961,
+        "low_client": "moderate-1",
+        "low_ttft": 1.546485371000017,
+        "delta_s": 39.0189,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 2,
+        "high_client": "chat-0",
+        "high_ttft": 39.795118382999135,
+        "low_client": "batch-0",
+        "low_ttft": 1.5527861710015713,
+        "delta_s": 38.2423,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 2,
+        "high_client": "chat-0",
+        "high_ttft": 39.795118382999135,
+        "low_client": "batch-1",
+        "low_ttft": 11.002902963000452,
+        "delta_s": 28.7922,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 2,
+        "high_client": "chat-1",
+        "high_ttft": 40.56542763899961,
+        "low_client": "batch-0",
+        "low_ttft": 1.5527861710015713,
+        "delta_s": 39.0126,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 2,
+        "high_client": "chat-1",
+        "high_ttft": 40.56542763899961,
+        "low_client": "batch-1",
+        "low_ttft": 11.002902963000452,
+        "delta_s": 29.5625,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 2,
+        "high_client": "moderate-0",
+        "high_ttft": 41.91308059000039,
+        "low_client": "batch-0",
+        "low_ttft": 1.5527861710015713,
+        "delta_s": 40.3603,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 2,
+        "high_client": "moderate-0",
+        "high_ttft": 41.91308059000039,
+        "low_client": "batch-1",
+        "low_ttft": 11.002902963000452,
+        "delta_s": 30.9102,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 3,
+        "high_client": "chat-0",
+        "high_ttft": 51.35158163300002,
+        "low_client": "moderate-1",
+        "low_ttft": 1.4456006909986172,
+        "delta_s": 49.906,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 3,
+        "high_client": "chat-0",
+        "high_ttft": 51.35158163300002,
+        "low_client": "moderate-0",
+        "low_ttft": 42.782093472998895,
+        "delta_s": 8.5695,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 3,
+        "high_client": "chat-1",
+        "high_ttft": 0.4067661879998923,
+        "low_client": "batch-0",
+        "low_ttft": 0.40667196800131933,
+        "delta_s": 0.0001,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 3,
+        "high_client": "chat-0",
+        "high_ttft": 51.35158163300002,
+        "low_client": "batch-0",
+        "low_ttft": 0.40667196800131933,
+        "delta_s": 50.9449,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 3,
+        "high_client": "chat-0",
+        "high_ttft": 51.35158163300002,
+        "low_client": "batch-1",
+        "low_ttft": 9.579047225999602,
+        "delta_s": 41.7725,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 3,
+        "high_client": "moderate-1",
+        "high_ttft": 1.4456006909986172,
+        "low_client": "batch-0",
+        "low_ttft": 0.40667196800131933,
+        "delta_s": 1.0389,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 3,
+        "high_client": "moderate-0",
+        "high_ttft": 42.782093472998895,
+        "low_client": "batch-0",
+        "low_ttft": 0.40667196800131933,
+        "delta_s": 42.3754,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 3,
+        "high_client": "moderate-0",
+        "high_ttft": 42.782093472998895,
+        "low_client": "batch-1",
+        "low_ttft": 9.579047225999602,
+        "delta_s": 33.203,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 4,
+        "high_client": "chat-1",
+        "high_ttft": 2.3301995279998664,
+        "low_client": "batch-1",
+        "low_ttft": 1.8639910250003595,
+        "delta_s": 0.4662,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 4,
+        "high_client": "moderate-1",
+        "high_ttft": 4.065252176998911,
+        "low_client": "batch-1",
+        "low_ttft": 1.8639910250003595,
+        "delta_s": 2.2013,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 4,
+        "high_client": "moderate-0",
+        "high_ttft": 13.131221005998668,
+        "low_client": "batch-1",
+        "low_ttft": 1.8639910250003595,
+        "delta_s": 11.2672,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 5,
+        "high_client": "chat-1",
+        "high_ttft": 8.801231146999271,
+        "low_client": "moderate-0",
+        "low_ttft": 1.5180764430006093,
+        "delta_s": 7.2832,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 5,
+        "high_client": "chat-1",
+        "high_ttft": 8.801231146999271,
+        "low_client": "batch-0",
+        "low_ttft": 0.43437395399996603,
+        "delta_s": 8.3669,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 5,
+        "high_client": "moderate-0",
+        "high_ttft": 1.5180764430006093,
+        "low_client": "batch-0",
+        "low_ttft": 0.43437395399996603,
+        "delta_s": 1.0837,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 5,
+        "high_client": "moderate-1",
+        "high_ttft": 9.96273050200034,
+        "low_client": "batch-0",
+        "low_ttft": 0.43437395399996603,
+        "delta_s": 9.5284,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 6,
+        "high_client": "chat-0",
+        "high_ttft": 9.160975217999294,
+        "low_client": "moderate-0",
+        "low_ttft": 1.4958207449999463,
+        "delta_s": 7.6652,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 6,
+        "high_client": "chat-1",
+        "high_ttft": 9.722483542000191,
+        "low_client": "moderate-0",
+        "low_ttft": 1.4958207449999463,
+        "delta_s": 8.2267,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 6,
+        "high_client": "chat-0",
+        "high_ttft": 9.160975217999294,
+        "low_client": "batch-0",
+        "low_ttft": 1.4984643810003035,
+        "delta_s": 7.6625,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 6,
+        "high_client": "chat-1",
+        "high_ttft": 9.722483542000191,
+        "low_client": "batch-0",
+        "low_ttft": 1.4984643810003035,
+        "delta_s": 8.224,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 6,
+        "high_client": "moderate-1",
+        "high_ttft": 10.896861573999558,
+        "low_client": "batch-0",
+        "low_ttft": 1.4984643810003035,
+        "delta_s": 9.3984,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 7,
+        "high_client": "chat-1",
+        "high_ttft": 44.93236855000032,
+        "low_client": "moderate-0",
+        "low_ttft": 1.5767104509995988,
+        "delta_s": 43.3557,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 7,
+        "high_client": "chat-0",
+        "high_ttft": 53.30851690799864,
+        "low_client": "moderate-0",
+        "low_ttft": 1.5767104509995988,
+        "delta_s": 51.7318,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 7,
+        "high_client": "chat-0",
+        "high_ttft": 53.30851690799864,
+        "low_client": "moderate-1",
+        "low_ttft": 46.15791655400062,
+        "delta_s": 7.1506,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 7,
+        "high_client": "chat-1",
+        "high_ttft": 44.93236855000032,
+        "low_client": "batch-0",
+        "low_ttft": 1.5745055639999919,
+        "delta_s": 43.3579,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 7,
+        "high_client": "chat-1",
+        "high_ttft": 44.93236855000032,
+        "low_client": "batch-1",
+        "low_ttft": 9.590625003998866,
+        "delta_s": 35.3417,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 7,
+        "high_client": "chat-0",
+        "high_ttft": 53.30851690799864,
+        "low_client": "batch-0",
+        "low_ttft": 1.5745055639999919,
+        "delta_s": 51.734,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 7,
+        "high_client": "chat-0",
+        "high_ttft": 53.30851690799864,
+        "low_client": "batch-1",
+        "low_ttft": 9.590625003998866,
+        "delta_s": 43.7179,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 7,
+        "high_client": "moderate-0",
+        "high_ttft": 1.5767104509995988,
+        "low_client": "batch-0",
+        "low_ttft": 1.5745055639999919,
+        "delta_s": 0.0022,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 7,
+        "high_client": "moderate-1",
+        "high_ttft": 46.15791655400062,
+        "low_client": "batch-0",
+        "low_ttft": 1.5745055639999919,
+        "delta_s": 44.5834,
+        "pair": "moderate>batch"
+      },
+      {
+        "wave": 7,
+        "high_client": "moderate-1",
+        "high_ttft": 46.15791655400062,
+        "low_client": "batch-1",
+        "low_ttft": 9.590625003998866,
+        "delta_s": 36.5673,
+        "pair": "moderate>batch"
+      }
+    ]
+  },
+  "throughput_trend": {
+    "per_wave_mean_tps": {
+      "0": 11.57,
+      "1": 12.81,
+      "2": 13.46,
+      "3": 12.24,
+      "4": 12.82,
+      "5": 12.7,
+      "6": 13.45,
+      "7": 11.86
+    },
+    "trend": "stable"
+  }
+}

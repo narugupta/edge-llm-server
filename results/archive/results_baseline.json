@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "host": "localhost",
+    "port": 8081,
+    "rounds": 5,
+    "timestamp": "2026-06-11T09:37:56.841526",
+    "label": "baseline \u2014 unmodified server, no QoS policy"
+  },
+  "raw": [
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 0,
+      "t_start": 189.689059056,
+      "ttft": 1.3057420620000073,
+      "total_time": 1.5958367359999954,
+      "tokens_out": 7,
+      "error": null
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 0,
+      "t_start": 189.690718278,
+      "ttft": 1.9263334450000116,
+      "total_time": 7.932901117,
+      "tokens_out": 133,
+      "error": null
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 0,
+      "t_start": 189.689164112,
+      "ttft": 1.306629273000027,
+      "total_time": 30.152983624,
+      "tokens_out": 512,
+      "error": null
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 1,
+      "t_start": 221.848371866,
+      "ttft": 8.751815937000003,
+      "total_time": 9.285921623999997,
+      "tokens_out": 7,
+      "error": null
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 1,
+      "t_start": 221.847036369,
+      "ttft": 0.15110832700000287,
+      "total_time": 8.351299632999996,
+      "tokens_out": 99,
+      "error": null
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 1,
+      "t_start": 221.845444536,
+      "ttft": 0.15382374800000775,
+      "total_time": 33.42972781,
+      "tokens_out": 512,
+      "error": null
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 2,
+      "t_start": 257.278523493,
+      "ttft": 0.0625381069999662,
+      "total_time": 0.7339586889999623,
+      "tokens_out": 7,
+      "error": null
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 2,
+      "t_start": 257.280129314,
+      "ttft": 1.9187710549999792,
+      "total_time": 12.298387934000004,
+      "tokens_out": 133,
+      "error": null
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 2,
+      "t_start": 257.279760258,
+      "ttft": 0.14793247299996892,
+      "total_time": 32.89309225599999,
+      "tokens_out": 512,
+      "error": null
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 3,
+      "t_start": 292.176607735,
+      "ttft": 0.16978035900001487,
+      "total_time": 0.47795715799998106,
+      "tokens_out": 7,
+      "error": null
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 3,
+      "t_start": 292.178563755,
+      "ttft": 0.8486626039999692,
+      "total_time": 10.316165886999954,
+      "tokens_out": 133,
+      "error": null
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 3,
+      "t_start": 292.180066927,
+      "ttft": 0.2291209030000232,
+      "total_time": 29.08153702100003,
+      "tokens_out": 512,
+      "error": null
+    },
+    {
+      "client_id": "chat",
+      "priority": "high",
+      "round": 4,
+      "t_start": 323.268504479,
+      "ttft": 5.997072933000027,
+      "total_time": 6.439966379999987,
+      "tokens_out": 7,
+      "error": null
+    },
+    {
+      "client_id": "moderate",
+      "priority": "medium",
+      "round": 4,
+      "t_start": 323.265068047,
+      "ttft": 0.07606229200001735,
+      "total_time": 5.683095653000009,
+      "tokens_out": 99,
+      "error": null
+    },
+    {
+      "client_id": "batch",
+      "priority": "low",
+      "round": 4,
+      "t_start": 323.26704173,
+      "ttft": 0.07447936199997685,
+      "total_time": 25.220455465999976,
+      "tokens_out": 512,
+      "error": null
+    }
+  ],
+  "summary": {
+    "chat": {
+      "ttft": {
+        "n": 5,
+        "mean": 3.257,
+        "median": 1.306,
+        "min": 0.063,
+        "max": 8.752,
+        "stdev": 3.913
+      },
+      "total": {
+        "n": 5,
+        "mean": 3.707,
+        "median": 1.596,
+        "min": 0.478,
+        "max": 9.286,
+        "stdev": 3.947
+      },
+      "errors": []
+    },
+    "moderate": {
+      "ttft": {
+        "n": 5,
+        "mean": 0.984,
+        "median": 0.849,
+        "min": 0.076,
+        "max": 1.926,
+        "stdev": 0.908
+      },
+      "total": {
+        "n": 5,
+        "mean": 8.916,
+        "median": 8.351,
+        "min": 5.683,
+        "max": 12.298,
+        "stdev": 2.507
+      },
+      "errors": []
+    },
+    "batch": {
+      "ttft": {
+        "n": 5,
+        "mean": 0.382,
+        "median": 0.154,
+        "min": 0.074,
+        "max": 1.307,
+        "stdev": 0.52
+      },
+      "total": {
+        "n": 5,
+        "mean": 30.156,
+        "median": 30.153,
+        "min": 25.22,
+        "max": 33.43,
+        "stdev": 3.306
+      },
+      "errors": []
+    }
+  },
+  "client_profiles": {
+    "chat": {
+      "label": "Client 1 \u2014 CHAT (foreground)",
+      "priority": "high"
+    },
+    "moderate": {
+      "label": "Client 2 \u2014 MODERATE (interactive)",
+      "priority": "medium"
+    },
+    "batch": {
+      "label": "Client 3 \u2014 BATCH (background)",
+      "priority": "low"
+    }
+  }
+}
