@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "host": "localhost",
+    "port": 8082,
+    "server_port": 8081,
+    "waves": 5,
+    "clients": 3,
+    "client_mix": [
+      "chat",
+      "moderate",
+      "batch"
+    ],
+    "wave_delay": 1.0,
+    "arrival_pattern": "staggered",
+    "stagger_delay": 0.3,
+    "stagger_jitter": 0.1,
+    "label": "scale_1_1_1_reserve1",
+    "via_proxy": true,
+    "timestamp": "2026-07-18T12:41:30.022710"
+  },
+  "raw": [
+    {
+      "wave": 0,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 235.671250469,
+      "wave_arrival_s": 0.5063,
+      "ttft": 0.8669976790000078,
+      "total_time": 1.1125771339999915,
+      "tokens_out": 7,
+      "tokens_per_s": 28.5,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 235.165241073,
+      "wave_arrival_s": 0.0003,
+      "ttft": 1.320372204999984,
+      "total_time": 5.125773769999995,
+      "tokens_out": 97,
+      "tokens_per_s": 25.49,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 235.399802172,
+      "wave_arrival_s": 0.2348,
+      "ttft": 6.070756205000009,
+      "total_time": 31.783103494000017,
+      "tokens_out": 512,
+      "tokens_per_s": 19.91,
+      "error": null
+    },
+    {
+      "wave": 1,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 268.532558729,
+      "wave_arrival_s": 0.3484,
+      "ttft": 1.2131849649999822,
+      "total_time": 1.690463555000008,
+      "tokens_out": 7,
+      "tokens_per_s": 14.67,
+      "error": null
+    },
+    {
+      "wave": 1,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 268.184577401,
+      "wave_arrival_s": 0.0004,
+      "ttft": 0.34367581599997266,
+      "total_time": 8.212374399999987,
+      "tokens_out": 100,
+      "tokens_per_s": 12.71,
+      "error": null
+    },
+    {
+      "wave": 1,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 268.784801681,
+      "wave_arrival_s": 0.6006,
+      "ttft": 9.82629954500004,
+      "total_time": 42.39336025,
+      "tokens_out": 512,
+      "tokens_per_s": 15.72,
+      "error": null
+    },
+    {
+      "wave": 2,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 312.761944839,
+      "wave_arrival_s": 0.5824,
+      "ttft": 0.537034387999995,
+      "total_time": 1.0419338079999534,
+      "tokens_out": 7,
+      "tokens_per_s": 13.86,
+      "error": null
+    },
+    {
+      "wave": 2,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 312.180443533,
+      "wave_arrival_s": 0.0009,
+      "ttft": 0.4245945499999948,
+      "total_time": 14.994631185000003,
+      "tokens_out": 219,
+      "tokens_per_s": 15.03,
+      "error": null
+    },
+    {
+      "wave": 2,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 312.502821516,
+      "wave_arrival_s": 0.3232,
+      "ttft": 16.96923107500004,
+      "total_time": 52.207729020000045,
+      "tokens_out": 512,
+      "tokens_per_s": 14.53,
+      "error": null
+    },
+    {
+      "wave": 3,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 366.303848174,
+      "wave_arrival_s": 0.5922,
+      "ttft": 1.1294052540000052,
+      "total_time": 1.5235938719999922,
+      "tokens_out": 7,
+      "tokens_per_s": 17.76,
+      "error": null
+    },
+    {
+      "wave": 3,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 365.712489521,
+      "wave_arrival_s": 0.0009,
+      "ttft": 1.4716743239999914,
+      "total_time": 6.118418094999981,
+      "tokens_out": 84,
+      "tokens_per_s": 18.08,
+      "error": null
+    },
+    {
+      "wave": 3,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 365.931501958,
+      "wave_arrival_s": 0.2199,
+      "ttft": 7.722050595999974,
+      "total_time": 39.81824190599997,
+      "tokens_out": 512,
+      "tokens_per_s": 15.95,
+      "error": null
+    },
+    {
+      "wave": 4,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 407.477819763,
+      "wave_arrival_s": 0.727,
+      "ttft": 0.5497996599999624,
+      "total_time": 1.1656629329999646,
+      "tokens_out": 7,
+      "tokens_per_s": 11.37,
+      "error": null
+    },
+    {
+      "wave": 4,
+      "client_id": "batch-0",
+      "client_type": "batch",
+      "priority": 2,
+      "t_start": 406.751294821,
+      "wave_arrival_s": 0.0004,
+      "ttft": 0.2108095450000178,
+      "total_time": 32.55105587700001,
+      "tokens_out": 512,
+      "tokens_per_s": 15.83,
+      "error": null
+    },
+    {
+      "wave": 4,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 407.092640046,
+      "wave_arrival_s": 0.3418,
+      "ttft": 32.611406499,
+      "total_time": 40.05890478500004,
+      "tokens_out": 113,
+      "tokens_per_s": 15.17,
+      "error": null
+    }
+  ],
+  "priority_ordering": {
+    "total_pairs": 15,
+    "total_violations": 4,
+    "violation_rate": 0.2667,
+    "per_wave": {
+      "0": 0,
+      "1": 1,
+      "2": 1,
+      "3": 0,
+      "4": 2
+    },
+    "violations": [
+      {
+        "wave": 1,
+        "high_client": "chat-0",
+        "high_ttft": 1.2131849649999822,
+        "high_arrival_s": 0.3484,
+        "low_client": "moderate-0",
+        "low_ttft": 0.34367581599997266,
+        "low_arrival_s": 0.0004,
+        "delta_s": 0.8695,
+        "delta_arrival_s": 0.348,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 2,
+        "high_client": "chat-0",
+        "high_ttft": 0.537034387999995,
+        "high_arrival_s": 0.5824,
+        "low_client": "moderate-0",
+        "low_ttft": 0.4245945499999948,
+        "low_arrival_s": 0.0009,
+        "delta_s": 0.1124,
+        "delta_arrival_s": 0.582,
+        "pair": "chat>moderate"
+      },
+      {
+        "wave": 4,
+        "high_client": "chat-0",
+        "high_ttft": 0.5497996599999624,
+        "high_arrival_s": 0.727,
+        "low_client": "batch-0",
+        "low_ttft": 0.2108095450000178,
+        "low_arrival_s": 0.0004,
+        "delta_s": 0.339,
+        "delta_arrival_s": 0.727,
+        "pair": "chat>batch"
+      },
+      {
+        "wave": 4,
+        "high_client": "moderate-0",
+        "high_ttft": 32.611406499,
+        "high_arrival_s": 0.3418,
+        "low_client": "batch-0",
+        "low_ttft": 0.2108095450000178,
+        "low_arrival_s": 0.0004,
+        "delta_s": 32.4006,
+        "delta_arrival_s": 0.341,
+        "pair": "moderate>batch"
+      }
+    ],
+    "likely_idle_pickup_count": 0,
+    "likely_genuine_count": 4,
+    "idle_pickup_threshold_s": 1.0,
+    "note": "Heuristic split based on arrival gap, not confirmed via proxy dispatch timestamps. 'likely_idle_pickup' = low-priority client arrived >1.0s before the high-priority client (probably picked up an idle slot correctly). 'likely_genuine' = arrival gap was small or unknown \u2014 same failure mode as a simultaneous-arrival violation."
+  },
+  "throughput_trend": {
+    "per_wave_mean_tps": {
+      "0": 19.91,
+      "1": 15.72,
+      "2": 14.53,
+      "3": 15.95,
+      "4": 15.83
+    },
+    "trend": "degrading"
+  },
+  "batch_starvation": {
+    "n": 5,
+    "max_ttft_overall": 16.969,
+    "mean_ttft_overall": 8.16,
+    "per_wave_max_ttft": {
+      "0": 6.071,
+      "1": 9.826,
+      "2": 16.969,
+      "3": 7.722,
+      "4": 0.211
+    },
+    "front_half_mean": 7.949,
+    "back_half_mean": 8.301,
+    "worsening_flag": false,
+    "note": "max_ttft is an upper bound on wait time (includes compute, not just queueing). worsening_flag fires if the back-half mean of per-wave max TTFT exceeds 1.5x the front-half mean \u2014 a rough signal only, not a formal starvation proof."
+  }
+}
