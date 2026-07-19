@@ -17,10 +17,9 @@ What it does
 
 Usage
   # Terminal 1 — llama-server
-./build/bin/llama-server \
-    -m ~/Qwen2.5-1.5B-Q4_K_M.gguf \
-    --port 8081 --parallel 2 --ctx-size 2048 --kv-unified \
-    2>&1 | tee reserved_slot__priority_log.txt
+  ./build/bin/llama-server \\
+      -m ~/Qwen2.5-1.5B-Q4_K_M.gguf \\
+      --port 8081 --parallel 2 --ctx-size 2048 --kv-unified
 
   # Terminal 2 — proxy (defaults)
   python3 proxy.py
@@ -194,7 +193,7 @@ _active_lock = threading.Lock()
 _results: list[dict] = []
 _results_lock = threading.Lock()
 
-# ── Sequence number generator ───────────────────────────────────────────────
+
 def _next_seq() -> int:
     global _seq_counter
     with _seq_lock:
@@ -202,7 +201,7 @@ def _next_seq() -> int:
         return _seq_counter
 
 
-# ── Pending request  ───────────────────────────────────────────────────────────
+# ── Pending request ───────────────────────────────────────────────────────────
 
 class PendingRequest:
     def __init__(self, method: str, path: str, headers: dict,
@@ -223,6 +222,11 @@ class PendingRequest:
         self.timing = {}
 
         self.t_queue_enter = None
+        # Set True by the client-facing handler if ready_event.wait() times
+        # out (130s) before dispatch. The dispatcher checks this and drops
+        # the request instead of spending a physical slot on a response
+        # nobody is listening for anymore.
+        self.abandoned = False
         self.t_dispatch = None
         self.t_first_token = None
         self.t_complete = None
@@ -265,6 +269,16 @@ def _dispatcher():
                 time.sleep(0.01)
                 continue
 
+            if candidate.abandoned:
+                # Client already gave up (504, 130s) while this sat queued.
+                # Drop it here rather than let it consume a physical slot
+                # for a response nobody will read -- this is what caused
+                # queue backlog to compound under sustained high load.
+                waited = time.perf_counter() - candidate.t_queue_enter
+                log.info(f"[{candidate.client_id:8s}] dropped (abandoned, "
+                         f"waited={waited:.1f}s)")
+                continue
+
             if _reservation_blocks(candidate.priority):
                 _pq.put((priority, seq, candidate))
                 time.sleep(0.01)
@@ -280,6 +294,13 @@ def _dispatcher():
 
         # Pop the highest-priority request
         priority, seq, req = _pq.get()
+
+        if req.abandoned:
+            waited = time.perf_counter() - req.t_queue_enter
+            log.info(f"[{req.client_id:8s}] dropped (abandoned, "
+                     f"waited={waited:.1f}s)")
+            _slot_sem.release()
+            continue
 
         # Re-check: a higher-priority (still non-chat) request could have
         # taken queue-head during the arrival window, or another dispatch
@@ -480,6 +501,7 @@ class ProxyHandler(BaseHTTPRequestHandler):
         req.ready_event.wait(timeout=130)
 
         if req.response_status is None:
+            req.abandoned = True
             self.send_response(504)
             self.end_headers()
             self.wfile.write(b"Proxy timeout")
