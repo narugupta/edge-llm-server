@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "client_type": "moderate",
+    "host": "localhost",
+    "port": 8081,
+    "via_proxy": false,
+    "slots": 1,
+    "search_mode": "adaptive",
+    "concurrencies": null,
+    "start_n": 1,
+    "max_n": 500,
+    "repeats": 3,
+    "warmup": 1,
+    "wave_delay": 2.0,
+    "slo_definition": {
+      "metric": "ttft",
+      "threshold": 2.0,
+      "label": "TTFT mean < 2.0s"
+    },
+    "label": "capacity_moderate_slots1",
+    "timestamp": "2026-07-26T08:13:24.794892"
+  },
+  "levels": [
+    {
+      "concurrency": 1,
+      "repeats": 3,
+      "trials": [
+        {
+          "n_total": 1,
+          "n_errors": 0,
+          "n_ok": 1,
+          "completion_rate": 1.0,
+          "mean": 0.33745748000001186,
+          "median": 0.33745748000001186,
+          "p99": 0.33745748000001186,
+          "max": 0.33745748000001186,
+          "threshold": 2.0,
+          "slo_met": true
+        },
+        {
+          "n_total": 1,
+          "n_errors": 0,
+          "n_ok": 1,
+          "completion_rate": 1.0,
+          "mean": 0.2888455129996146,
+          "median": 0.2888455129996146,
+          "p99": 0.2888455129996146,
+          "max": 0.2888455129996146,
+          "threshold": 2.0,
+          "slo_met": true
+        },
+        {
+          "n_total": 1,
+          "n_errors": 0,
+          "n_ok": 1,
+          "completion_rate": 1.0,
+          "mean": 0.22800823199941078,
+          "median": 0.22800823199941078,
+          "p99": 0.22800823199941078,
+          "max": 0.22800823199941078,
+          "threshold": 2.0,
+          "slo_met": true
+        }
+      ],
+      "pooled": {
+        "n_total": 3,
+        "n_errors": 0,
+        "n_ok": 3,
+        "completion_rate": 1.0,
+        "mean": 0.2847704083330124,
+        "median": 0.2888455129996146,
+        "p99": 0.33745748000001186,
+        "max": 0.33745748000001186,
+        "threshold": 2.0,
+        "slo_met": true
+      },
+      "slo_met": true,
+      "raw": [
+        {
+          "wave": 0,
+          "client_id": "moderate-0",
+          "client_type": "moderate",
+          "priority": 1,
+          "t_start": 8029.85190141,
+          "wave_arrival_s": null,
+          "ttft": 0.33745748000001186,
+          "total_time": 5.453654569999344,
+          "tokens_out": 99,
+          "tokens_per_s": 19.35,
+          "error": null
+        },
+        {
+          "wave": 1,
+          "client_id": "moderate-0",
+          "client_type": "moderate",
+          "priority": 1,
+          "t_start": 8037.306778926,
+          "wave_arrival_s": null,
+          "ttft": 0.2888455129996146,
+          "total_time": 4.705317095999817,
+          "tokens_out": 99,
+          "tokens_per_s": 22.42,
+          "error": null
+        },
+        {
+          "wave": 2,
+          "client_id": "moderate-0",
+          "client_type": "moderate",
+          "priority": 1,
+          "t_start": 8044.013782928,
+          "wave_arrival_s": null,
+          "ttft": 0.22800823199941078,
+          "total_time": 4.42160210899965,
+          "tokens_out": 99,
+          "tokens_per_s": 23.61,
+          "error": null
+        }
+      ]
+    },
+    {
+      "concurrency": 2,
+      "repeats": 3,
+      "trials": [
+        {
+          "n_total": 2,
+          "n_errors": 0,
+          "n_ok": 2,
+          "completion_rate": 1.0,
+          "mean": 2.2986422969997875,
+          "median": 2.2986422969997875,
+          "p99": 4.38384540900006,
+          "max": 4.38384540900006,
+          "threshold": 2.0,
+          "slo_met": false
+        },
+        {
+          "n_total": 2,
+          "n_errors": 0,
+          "n_ok": 2,
+          "completion_rate": 1.0,
+          "mean": 2.2907170090002182,
+          "median": 2.2907170090002182,
+          "p99": 4.320065347999844,
+          "max": 4.320065347999844,
+          "threshold": 2.0,
+          "slo_met": false
+        },
+        {
+          "n_total": 2,
+          "n_errors": 0,
+          "n_ok": 2,
+          "completion_rate": 1.0,
+          "mean": 2.33591881250004,
+          "median": 2.33591881250004,
+          "p99": 4.432213834000322,
+          "max": 4.432213834000322,
+          "threshold": 2.0,
+          "slo_met": false
+        }
+      ],
+      "pooled": {
+        "n_total": 6,
+        "n_errors": 0,
+        "n_ok": 6,
+        "completion_rate": 1.0,
+        "mean": 2.308426039500015,
+        "median": 2.2907170090002182,
+        "p99": 4.432213834000322,
+        "max": 4.432213834000322,
+        "threshold": 2.0,
+        "slo_met": false
+      },
+      "slo_met": false,
+      "raw": [
+        {
+          "wave": 0,
+          "client_id": "moderate-0",
+          "client_type": "moderate",
+          "priority": 1,
+          "t_start": 8061.373609862,
+          "wave_arrival_s": null,
+          "ttft": 0.21343918499951542,
+          "total_time": 4.337351770999703,
+          "tokens_out": 99,
+          "tokens_per_s": 24.01,
+          "error": null
+        },
+        {
+          "wave": 0,
+          "client_id": "moderate-1",
+          "client_type": "moderate",
+          "priority": 1,
+          "t_start": 8061.37252972,
+          "wave_arrival_s": null,
+          "ttft": 4.38384540900006,
+          "total_time": 8.35111814100037,
+          "tokens_out": 99,
+          "tokens_per_s": 24.95,
+          "error": null
+        },
+        {
+          "wave": 1,
+          "client_id": "moderate-1",
+          "client_type": "moderate",
+          "priority": 1,
+          "t_start": 8071.726024535,
+          "wave_arrival_s": null,
+          "ttft": 0.26136867000059283,
+          "total_time": 4.273442528000487,
+          "tokens_out": 99,
+          "tokens_per_s": 24.68,
+          "error": null
+        },
+        {
+          "wave": 1,
+          "client_id": "moderate-0",
+          "client_type": "moderate",
+          "priority": 1,
+          "t_start": 8071.728397379,
+          "wave_arrival_s": null,
+          "ttft": 4.320065347999844,
+          "total_time": 8.248345998000332,
+          "tokens_out": 99,
+          "tokens_per_s": 25.2,
+          "error": null
+        },
+        {
+          "wave": 2,
+          "client_id": "moderate-1",
+          "client_type": "moderate",
+          "priority": 1,
+          "t_start": 8081.978856797,
+          "wave_arrival_s": null,
+          "ttft": 0.23962379099975806,
+          "total_time": 4.371999879000214,
+          "tokens_out": 99,
+          "tokens_per_s": 23.96,
+          "error": null
+        },
+        {
+          "wave": 2,
+          "client_id": "moderate-0",
+          "client_type": "moderate",
+          "priority": 1,
+          "t_start": 8081.981462275,
+          "wave_arrival_s": null,
+          "ttft": 4.432213834000322,
+          "total_time": 8.368345783999757,
+          "tokens_out": 99,
+          "tokens_per_s": 25.15,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "derived": {
+    "max_concurrency_within_slo": 1,
+    "non_monotonic_warning": false,
+    "note": "Results were monotonic: every tested concurrency at or below max_concurrency_within_slo passed its SLO, every one above it (if any were tested) failed.",
+    "capped_at_max_n": false
+  }
+}
