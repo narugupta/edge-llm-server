@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # run_step2_s1_s3_matrix.sh — full Step 2 matrix for Scenarios 1-3
-# (S4 EDF and S5 WFQ deferred — not yet implemented in proxy.py, reported
-# as future work for the Zoom instead of run).
+# Scenario 1: Priority proxy
+# Scenario 2: Fixed reservation
+# Scenario 3: Smart preemption
 #
 # For each slots in {1,2,4,8}:
 #   - restart llama-server with --parallel matching slots
