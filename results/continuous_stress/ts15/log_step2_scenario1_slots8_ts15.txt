@@ -1,0 +1,36 @@
+
+edge-llm-server — Continuous Mixed-Workload Stress Test (Step 2)
+  Label          : step2_scenario1_slots8_ts15
+  Scenario       : 1 (Priority Proxy)
+  Target         : localhost:8082 (proxy)
+  Slots (info)   : 8
+  Reservation    : reserved_slots=0  smart_preemption=False  (informational -- must match what proxy.py was actually started with)
+  Duration       : 210.0s per type, poisson arrivals
+  Started        : 2026-08-26T20:18:44
+
+  Resolving arrival rates …
+  (target-samples mode: aiming for 15 samples/type, combined-budget=0.7)
+  chat      rate = 0.0714/s (target-samples: aiming for 15 over 210s (naive_rate=0.0714/s), scaled 1.000x for combined budget 0.7 -> rate=0.0714/s, expected_n~=15.0)
+  moderate  rate = 0.0714/s (target-samples: aiming for 15 over 210s (naive_rate=0.0714/s), scaled 1.000x for combined budget 0.7 -> rate=0.0714/s, expected_n~=15.0)
+  batch     rate = 0.0714/s (target-samples: aiming for 15 over 210s (naive_rate=0.0714/s), scaled 1.000x for combined budget 0.7 -> rate=0.0714/s, expected_n~=15.0)
+  Combined utilization across active types = 0.696x (chat=0.007, moderate=0.167, batch=0.522) on 8 shared slot(s) -- sustainable.
+
+  Checking health …
+  Reachable — status: 'ok'
+
+  Generating arrivals for 210.0s …
+  [chat] generator done: fired 11 arrivals over 210.0s (target rate 0.071/s)
+  [moderate] generator done: fired 10 arrivals over 210.0s (target rate 0.071/s)
+  [batch] generator done: fired 20 arrivals over 210.0s (target rate 0.071/s)
+
+  Arrivals complete. Draining in-flight requests (up to 180.0s) …
+
+==============================================================================
+  CONTINUOUS STRESS SUMMARY — step2_scenario1_slots8_ts15
+==============================================================================
+  chat      arrived=  11  completed=  11  completion=1.0  ttft mean=  1.993s  violation_rate=0.6364 [DEGRADING OVER RUN]
+  moderate  arrived=  10  completed=  10  completion=1.0  ttft mean=  2.028s  violation_rate=0.3
+  batch     arrived=  20  completed=  20  completion=1.0  total_time mean= 36.526s  violation_rate=0.05
+
+  Results saved -> results/step2/results_step2_scenario1_slots8_ts15.json
+

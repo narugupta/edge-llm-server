@@ -1,0 +1,287 @@
+{
+  "meta": {
+    "label": "step2_scenario2_slots1_rf022",
+    "scenario": 2,
+    "scenario_label": "Fixed Reservation",
+    "host": "localhost",
+    "port": 8082,
+    "slots": 1,
+    "reserved_chat_slots": 1,
+    "smart_preemption": false,
+    "duration": 45.0,
+    "arrival_pattern": "poisson",
+    "drain_timeout": 180.0,
+    "timeout": 150.0,
+    "rates": {
+      "chat": 0.3100353994286053,
+      "moderate": 0.04526570834487299,
+      "batch": 0.004213665761671638
+    },
+    "rate_resolution": {
+      "chat": "derived from results_capacity_chat_slots1.json: capacity=2, slots=1, effective_servers=min(capacity,slots)=1, mean_total_time=0.710s (from raw records, NOT pooled.mean which may be ttft), base_rate=1.409/s, rate_frac=0.22 -> 0.310/s",
+      "moderate": "derived from results_capacity_moderate_slots1.json: capacity=1, slots=1, effective_servers=min(capacity,slots)=1, mean_total_time=4.860s (from raw records, NOT pooled.mean which may be ttft), base_rate=0.206/s, rate_frac=0.22 -> 0.045/s",
+      "batch": "derived from results_capacity_batch_slots1.json: capacity=3, slots=1, effective_servers=min(capacity,slots)=1, mean_total_time=52.211s (from raw records, NOT pooled.mean which may be ttft), base_rate=0.019/s, rate_frac=0.22 -> 0.004/s"
+    },
+    "rate_frac": 0.22,
+    "still_in_flight_after_drain": 0,
+    "timestamp": "2026-08-26T14:11:29.259128"
+  },
+  "per_type": {
+    "chat": {
+      "metric": "ttft",
+      "threshold": 0.5,
+      "n_arrived": 14,
+      "n_completed": 14,
+      "n_errors": 0,
+      "error_samples": [],
+      "completion_rate": 1.0,
+      "stats": {
+        "n": 14,
+        "mean": 0.1775,
+        "p99": 0.2116,
+        "max": 0.2119
+      },
+      "slo_violation_rate": 0.0,
+      "front_half_mean": 0.188,
+      "back_half_mean": 0.1671,
+      "degrading_over_run": false
+    },
+    "moderate": {
+      "metric": "ttft",
+      "threshold": 2.0,
+      "n_arrived": 1,
+      "n_completed": 0,
+      "n_errors": 1,
+      "error_samples": [
+        "HTTP 504"
+      ],
+      "completion_rate": 0.0,
+      "stats": {
+        "n": 0,
+        "mean": null,
+        "p99": null,
+        "max": null
+      },
+      "slo_violation_rate": 1.0,
+      "front_half_mean": null,
+      "back_half_mean": null,
+      "degrading_over_run": []
+    },
+    "batch": {
+      "metric": "total_time",
+      "threshold": 60.0,
+      "n_arrived": 0,
+      "n_completed": 0,
+      "n_errors": 0,
+      "error_samples": [],
+      "completion_rate": null,
+      "stats": {
+        "n": 0,
+        "mean": null,
+        "p99": null,
+        "max": null
+      },
+      "slo_violation_rate": null,
+      "front_half_mean": null,
+      "back_half_mean": null,
+      "degrading_over_run": []
+    }
+  },
+  "raw": [
+    {
+      "wave": 0,
+      "client_id": "chat-0",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19017.313201483,
+      "wave_arrival_s": 3.9379,
+      "ttft": 0.17016245799823082,
+      "total_time": 0.349320468998485,
+      "tokens_out": 7,
+      "tokens_per_s": 39.07,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-1",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19018.307818352,
+      "wave_arrival_s": 4.9325,
+      "ttft": 0.16972603799877106,
+      "total_time": 0.34394859099847963,
+      "tokens_out": 7,
+      "tokens_per_s": 40.18,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-2",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19021.601233385,
+      "wave_arrival_s": 8.2259,
+      "ttft": 0.20560413599741878,
+      "total_time": 0.38152312400052324,
+      "tokens_out": 7,
+      "tokens_per_s": 39.79,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-3",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19025.483767319,
+      "wave_arrival_s": 12.1084,
+      "ttft": 0.16891340700021829,
+      "total_time": 0.34726102499917033,
+      "tokens_out": 7,
+      "tokens_per_s": 39.25,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-4",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19026.812378486,
+      "wave_arrival_s": 13.437,
+      "ttft": 0.17787320999923395,
+      "total_time": 0.3610200740004075,
+      "tokens_out": 7,
+      "tokens_per_s": 38.22,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-5",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19028.432643111,
+      "wave_arrival_s": 15.0573,
+      "ttft": 0.21193656900140923,
+      "total_time": 0.3909925440020743,
+      "tokens_out": 7,
+      "tokens_per_s": 39.09,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-6",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19035.550128957,
+      "wave_arrival_s": 22.1748,
+      "ttft": 0.21159472799990908,
+      "total_time": 0.3898178640010883,
+      "tokens_out": 7,
+      "tokens_per_s": 39.28,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-7",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19036.312324117,
+      "wave_arrival_s": 22.937,
+      "ttft": 0.15825029800180346,
+      "total_time": 0.36321980399952736,
+      "tokens_out": 7,
+      "tokens_per_s": 34.15,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-8",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19042.242483327,
+      "wave_arrival_s": 28.8671,
+      "ttft": 0.16793198099912843,
+      "total_time": 0.35381373599739163,
+      "tokens_out": 7,
+      "tokens_per_s": 37.66,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-9",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19046.832526477,
+      "wave_arrival_s": 33.4572,
+      "ttft": 0.21005948899983196,
+      "total_time": 0.39212804500130005,
+      "tokens_out": 7,
+      "tokens_per_s": 38.45,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-10",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19053.775224662,
+      "wave_arrival_s": 40.3999,
+      "ttft": 0.15941307300090557,
+      "total_time": 0.3362502569980279,
+      "tokens_out": 7,
+      "tokens_per_s": 39.58,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-11",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19054.079319765,
+      "wave_arrival_s": 40.704,
+      "ttft": 0.15647221500330488,
+      "total_time": 0.3300107860013668,
+      "tokens_out": 7,
+      "tokens_per_s": 40.34,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-12",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19054.820006805,
+      "wave_arrival_s": 41.4447,
+      "ttft": 0.1442129080023733,
+      "total_time": 0.32046402700143517,
+      "tokens_out": 7,
+      "tokens_per_s": 39.72,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "chat-13",
+      "client_type": "chat",
+      "priority": 0,
+      "t_start": 19055.842832592,
+      "wave_arrival_s": 42.4675,
+      "ttft": 0.17323710300115636,
+      "total_time": 0.35536616100216634,
+      "tokens_out": 7,
+      "tokens_per_s": 38.43,
+      "error": null
+    },
+    {
+      "wave": 0,
+      "client_id": "moderate-0",
+      "client_type": "moderate",
+      "priority": 1,
+      "t_start": 19057.436959862,
+      "wave_arrival_s": 44.0614,
+      "ttft": null,
+      "total_time": null,
+      "tokens_out": 0,
+      "tokens_per_s": null,
+      "error": "HTTP 504"
+    }
+  ]
+}

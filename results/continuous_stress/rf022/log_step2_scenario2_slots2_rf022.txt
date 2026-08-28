@@ -1,0 +1,35 @@
+
+edge-llm-server — Continuous Mixed-Workload Stress Test (Step 2)
+  Label          : step2_scenario2_slots2_rf022
+  Scenario       : 2 (Fixed Reservation)
+  Target         : localhost:8082 (proxy)
+  Slots (info)   : 2
+  Reservation    : reserved_slots=1  smart_preemption=False  (informational -- must match what proxy.py was actually started with)
+  Duration       : 45.0s per type, poisson arrivals
+  Started        : 2026-08-26T14:13:32
+
+  Resolving arrival rates …
+  chat      rate = 0.610/s (derived from results_capacity_chat_slots2.json: capacity=5, slots=2, effective_servers=min(capacity,slots)=2, mean_total_time=0.722s (from raw records, NOT pooled.mean which may be ttft), base_rate=2.771/s, rate_frac=0.22 -> 0.610/s)
+  moderate  rate = 0.060/s (derived from results_capacity_moderate_slots2.json: capacity=2, slots=2, effective_servers=min(capacity,slots)=2, mean_total_time=7.299s (from raw records, NOT pooled.mean which may be ttft), base_rate=0.274/s, rate_frac=0.22 -> 0.060/s)
+  batch     rate = 0.009/s (derived from results_capacity_batch_slots2.json: capacity=3, slots=2, effective_servers=min(capacity,slots)=2, mean_total_time=49.015s (from raw records, NOT pooled.mean which may be ttft), base_rate=0.041/s, rate_frac=0.22 -> 0.009/s)
+  Combined utilization across active types = 0.660x (chat=0.220, moderate=0.220, batch=0.220) on 2 shared slot(s) -- sustainable.
+
+  Checking health …
+  Reachable — status: 'ok'
+
+  Generating arrivals for 45.0s …
+  [chat] generator done: fired 27 arrivals over 45.0s (target rate 0.610/s)
+  [moderate] generator done: fired 5 arrivals over 45.0s (target rate 0.060/s)
+  [batch] generator done: fired 0 arrivals over 45.0s (target rate 0.009/s)
+
+  Arrivals complete. Draining in-flight requests (up to 180.0s) …
+
+==============================================================================
+  CONTINUOUS STRESS SUMMARY — step2_scenario2_slots2_rf022
+==============================================================================
+  chat      arrived=  27  completed=  27  completion=1.0  ttft mean=  0.811s  violation_rate=0.5926 [DEGRADING OVER RUN]
+  moderate  arrived=   5  completed=   5  completion=1.0  ttft mean=  7.373s  violation_rate=0.6 [DEGRADING OVER RUN]
+  batch     arrived=   0  completed=   0  completion=None  total_time mean=     n/a  violation_rate=None
+
+  Results saved -> results/step2/results_step2_scenario2_slots2_rf022.json
+
