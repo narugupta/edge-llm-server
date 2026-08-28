@@ -5,9 +5,10 @@ Aspect-6 finalization methodology)
 =========================================================================
 Finds the maximum number of *concurrent* requests of a single workload type
 (Chat, Moderate, or Batch — never mixed) that the system can serve while
-that type's own SLO still holds. This is the "theoretical maximum capacity" -
-a system-level ceiling, independent of any scheduling policy, since with
-only one type active there's nothing for a scheduler to arbitrate between.
+that type's own SLO still holds. This is the "theoretical maximum capacity"
+step from the meeting notes — a system-level ceiling, independent of any
+scheduling policy, since with only one type active there's nothing for a
+scheduler to arbitrate between.
 
 Repeats every concurrency level multiple times (default 3) rather than
 relying on a single wave, per the explicit warning in the meeting notes
@@ -95,19 +96,14 @@ import time
 from datetime import datetime
 
 try:
-    from stress_test import run_one_client, health_check
+    from stress_test import run_one_client, health_check, SLO_CHECK
 except ImportError:
     sys.exit(
         "Could not import from stress_test.py -- this script must be run "
         "from the same directory as stress_test.py (it reuses its client "
-        "request/TTFT-measurement logic directly rather than duplicating it)."
+        "request/TTFT-measurement logic and SLO definitions directly "
+        "rather than duplicating them)."
     )
-
-SLO_CHECK = {
-    "chat":     {"metric": "ttft",       "threshold": 0.5,  "label": "TTFT mean < 0.5s"},
-    "moderate": {"metric": "ttft",       "threshold": 2.0,  "label": "TTFT mean < 2.0s"},
-    "batch":    {"metric": "total_time", "threshold": 60.0, "label": "Total mean < 60.0s"},
-}
 
 
 def run_trial(client_type: str, concurrency: int, trial_idx: int, host: str, port: int) -> list:

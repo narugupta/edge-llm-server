@@ -138,7 +138,21 @@ def _parse_args():
             "Batch; it stays reserved indefinitely. Must satisfy "
             "0 <= N <= --slots. Set to 0 to disable reservation and "
             "reproduce pre-reservation dispatch behaviour exactly. "
-            "(default: 1)"
+            "Ignored if --smart-preemption is set. (default: 1)"
+        ),
+    )
+    parser.add_argument(
+        "--smart-preemption", action="store_true",
+        help=(
+            "Adaptive alternative to --reserved-chat-slots. Instead of a "
+            "fixed N, holds at most 1 slot open for Chat, and ONLY while "
+            "Chat is demonstrably active right now (queued or currently "
+            "being served) -- not indefinitely regardless of demand. "
+            "Fixes the measured case where a statically-reserved slot sat "
+            "idle for ~31s in a wave with no Chat activity at all, while "
+            "Moderate waited behind Batch on the single remaining shared "
+            "slot. Takes precedence over --reserved-chat-slots if both "
+            "are given."
         ),
     )
     args = parser.parse_args()
@@ -234,22 +248,61 @@ class PendingRequest:
 
 # ── Slot dispatcher ───────────────────────────────────────────────────────────
 
+def _chat_present() -> bool:
+    """
+    True if a Chat request is currently queued (arrived, not yet dispatched)
+    OR currently being served (in-flight, mid-generation).
+
+    Used by --smart-preemption to decide whether the "reserved" slot should
+    be held open right now. Checking ONLY "queued" would be nearly a no-op:
+    by the time the dispatcher is evaluating a non-Chat candidate, that
+    candidate was already popped as the head of the priority queue, which
+    -- given the heap's own ordering -- is only possible if no Chat request
+    was waiting at that exact instant (Chat would have been the head
+    instead). So "queued" alone almost never fires when it matters.
+
+    "Currently being served" is the signal that actually targets the
+    measured problem: static reservation held a slot open for ~31 seconds
+    in one scale-sweep wave where Chat neither arrived nor ran at all
+    during that time. Checking in-flight activity too means the
+    reservation naturally releases the moment Chat goes idle, rather than
+    holding a slot open indefinitely regardless of whether Chat needs it.
+    """
+    with _active_lock:
+        if _active_by_priority[0] > 0:
+            return True
+    with _pq.mutex:
+        return any(item[0] == 0 for item in _pq.queue)
+
+
 def _reservation_blocks(priority: int) -> bool:
     """
     True if dispatching a request of this priority right now would violate
-    --reserved-chat-slots, i.e. it is not Chat and forwarding it would leave
-    fewer than reserved_chat_slots physical slots free for Chat to use
-    immediately if a Chat request were to arrive next.
+    the active reservation policy -- either the static --reserved-chat-slots
+    constant, or, if --smart-preemption is set, a live 0-or-1 reservation
+    that only holds a slot open while Chat is demonstrably active (queued
+    or in-flight) right now, per _chat_present() above.
 
     Chat (priority 0) is never blocked by its own reservation. With
-    --reserved-chat-slots 0 this always returns False, reproducing
-    pre-reservation dispatch behaviour exactly.
+    --reserved-chat-slots 0 and --smart-preemption unset, this always
+    returns False, reproducing pre-reservation dispatch behaviour exactly.
+
+    --smart-preemption takes precedence over --reserved-chat-slots when
+    both are set (logged once at startup so this isn't silently surprising).
     """
-    if priority == 0 or _cfg.reserved_chat_slots <= 0:
+    if priority == 0:
         return False
+
+    if _cfg.smart_preemption:
+        effective_reserved = 1 if _chat_present() else 0
+    elif _cfg.reserved_chat_slots > 0:
+        effective_reserved = _cfg.reserved_chat_slots
+    else:
+        return False
+
     with _active_lock:
         non_chat_active = _active_by_priority[1] + _active_by_priority[2]
-    return non_chat_active >= (_cfg.slots - _cfg.reserved_chat_slots)
+    return non_chat_active >= (_cfg.slots - effective_reserved)
 
 
 def _dispatcher():
@@ -557,11 +610,23 @@ def main():
     log.info(f"Slot capacity  : {_cfg.slots}")
     log.info(f"Arrival window : {_cfg.arrival_window * 1000:.1f} ms")
     log.info(f"Dispatch gap   : {_cfg.dispatch_gap * 1000:.1f} ms  (set 0 to disable)")
-    if _cfg.reserved_chat_slots > 0:
+    if _cfg.smart_preemption:
+        log.info(
+            "Reservation    : SMART-PREEMPTION (adaptive) -- holds at most "
+            "1 slot for Chat, only while Chat is queued or in-flight right "
+            "now; releases automatically when Chat goes idle"
+        )
+        if _cfg.reserved_chat_slots != 1:
+            log.info(
+                f"               (--reserved-chat-slots {_cfg.reserved_chat_slots} "
+                f"was also given but is ignored -- smart-preemption takes precedence)"
+            )
+    elif _cfg.reserved_chat_slots > 0:
         log.info(
             f"Reserved slots : {_cfg.reserved_chat_slots} of {_cfg.slots} "
             f"held for Chat (Moderate/Batch capped at "
-            f"{_cfg.slots - _cfg.reserved_chat_slots} concurrent)"
+            f"{_cfg.slots - _cfg.reserved_chat_slots} concurrent), static, "
+            f"never released"
         )
     else:
         log.info("Reserved slots : 0 (reservation disabled)")

@@ -148,6 +148,16 @@ PROMPTS = {
 PRIORITY_LABEL = {"chat": "high", "moderate": "medium", "batch": "low"}
 PRIORITY_INT   = {"chat": 0,      "moderate": 1,         "batch": 2}
 
+# Canonical SLO definitions. Single source of truth -- capacity_search.py
+# and continuous_stress.py both import this rather than each keeping their
+# own copy, which had drifted into two independent (currently identical,
+# but not guaranteed to stay that way) definitions before this change.
+SLO_CHECK = {
+    "chat":     {"metric": "ttft",       "threshold": 0.5,  "label": "TTFT mean < 0.5s"},
+    "moderate": {"metric": "ttft",       "threshold": 2.0,  "label": "TTFT mean < 2.0s"},
+    "batch":    {"metric": "total_time", "threshold": 60.0, "label": "Total mean < 60.0s"},
+}
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def parse_args():
@@ -220,6 +230,8 @@ def run_one_client(
     results: list,
     results_lock: threading.Lock,
     wave_t0: Optional[float] = None,
+    timeout: float = 180.0,
+    session: Optional["requests.Session"] = None,
 ) -> None:
     """
     Fire one client's request and record timing.
@@ -233,6 +245,14 @@ def run_one_client(
     timing by staggering when each thread is started. `wave_t0`, if
     given, is used to record how long after the wave began this client
     actually arrived (for interpreting staggered-mode violations).
+
+    `session`, if given, is used instead of the module-level `requests`
+    for connection pooling under sustained load (e.g. continuous_stress.py
+    passes a shared requests.Session with a large connection pool, since
+    it fires many more requests over a longer duration than a discrete
+    wave-based test does). Falls back to plain `requests.post` -- a new
+    connection per call -- when not given, matching prior behaviour
+    exactly for callers that don't pass one.
     """
     client_id = f"{client_type}-{instance_id}"
     url = f"http://{host}:{port}/v1/chat/completions"
@@ -272,8 +292,9 @@ def run_one_client(
         result["wave_arrival_s"] = round(t_start - wave_t0, 4)
 
     try:
-        with requests.post(
-            url, json=payload, headers=headers, stream=True, timeout=180
+        poster = session if session is not None else requests
+        with poster.post(
+            url, json=payload, headers=headers, stream=True, timeout=timeout
         ) as resp:
             resp.raise_for_status()
             first_token = True
@@ -309,7 +330,7 @@ def run_one_client(
     except requests.exceptions.ConnectionError:
         result["error"] = "ConnectionError"
     except requests.exceptions.Timeout:
-        result["error"] = "Timeout (180s)"
+        result["error"] = f"Timeout ({timeout}s)"
     except requests.exceptions.HTTPError as exc:
         result["error"] = f"HTTP {exc.response.status_code}"
     except Exception as exc:
