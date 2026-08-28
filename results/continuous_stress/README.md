@@ -7,7 +7,10 @@ scheduling policy under test (proxy.py) is identical between them.
 
 ## `rf022/` — Method A: equal utilization split
 
-Run with `--rate-frac 0.22`. Every workload type's rate is derived as the
+Run with `--rate-frac 0.22` via `rf022/run_rf022_matrix.sh` (an archived,
+frozen snapshot -- reconstructed from the assistant conversation, verified
+against the real terminal output at the time; DO NOT use for new runs, see
+warning in the script itself). Every workload type's rate is derived as the
 same fraction (22%) of its own isolated capacity from Step 1
 (`rate = rate_frac * capacity / mean_service_time`).
 
@@ -18,10 +21,12 @@ conclusion about Batch's SLO behaviour under contention.
 
 ## `ts15/` — Method B: equal completions (the corrected methodology)
 
-Run with `--target-samples 15`. Rates are derived to aim for ~15
-completed requests per type, scaling chat/moderate/batch down **together**
-(never singling one out) only if that combined load would exceed a
-sustainable utilization budget (`--combined-budget`, default 0.7).
+Run with `--target-samples 15` via `ts15/run_step2_s1_s3_matrix.sh` (the
+current, maintained version of the matrix script -- also lives at the repo
+root for new runs). Rates are derived to aim for ~15 completed requests per
+type, scaling chat/moderate/batch down **together** (never singling one
+out) only if that combined load would exceed a sustainable utilization
+budget (`--combined-budget`, default 0.7).
 
 This is the methodology used for the reported findings (e.g. the slots=1
 total-starvation result) — sample counts came out balanced (9-28 per type
